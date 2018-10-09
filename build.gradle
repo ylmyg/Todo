@@ -19,9 +19,19 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext{
+    support          = '28.0.0'
+    retrofit         = '2.0.2'
+    okhttp3          = '3.6.0'
+    xmvp             = '1.2.2'
+    constraint       = '1.1.3'
+    toasty           = '1.3.0'
 }
