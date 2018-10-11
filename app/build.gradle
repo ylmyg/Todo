@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.xujiaji.todo"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -26,15 +26,19 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:$support"
     implementation "com.android.support:design:$support"
     implementation "com.android.support.constraint:constraint-layout:$constraint"
     implementation "com.github.xujiaji:xmvp:$xmvp"
-
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3"
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
-
     implementation "com.github.GrenderG:Toasty:$toasty"
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$adapterHelper"
+    implementation "com.github.xujiaji:happy-bubble:$happyBubble"
+    implementation "com.github.xujiaji:ripple-checkbox:$rippleCheckbox"
+    implementation "com.qianwen:update-app:$updateApp"
+    implementation 'com.qianwen:okhttp-utils:3.8.0'
+    implementation project(':DateTimePickerLibrary')
 }

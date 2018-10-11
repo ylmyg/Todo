@@ -43,13 +43,16 @@ public class CallbackHandler {
             public void onFailure(Call<T> call, Throwable t) {
                 if (presenterLife.isEnd()) return;
                 dataCallback.finished();
+                String errMsg;
                 if (t instanceof UnknownHostException || t instanceof ConnectException) {
-                    ToastHelper.warning("请检查网络");
+                    errMsg = "请检查网络";
                 } else if (t instanceof TimeoutException || t instanceof SocketTimeoutException) {
-                    ToastHelper.warning("连接超时");
+                    errMsg = "连接超时";
                 } else {
-                    ToastHelper.warning(t.getMessage());
+                    errMsg = t.getMessage();
                 }
+
+                dataCallback.fail(-200, errMsg);
             }
         };
     }

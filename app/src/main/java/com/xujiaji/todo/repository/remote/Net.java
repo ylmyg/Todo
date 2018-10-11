@@ -4,6 +4,7 @@ import android.text.TextUtils;
 
 import com.xujiaji.todo.helper.PrefHelper;
 import com.xujiaji.todo.repository.bean.Result;
+import com.xujiaji.todo.repository.bean.TodoTypeBean;
 import com.xujiaji.todo.repository.bean.UserBean;
 import com.xujiaji.todo.util.NetUtil;
 
@@ -31,7 +32,18 @@ public class Net {
      */
     public static final int ZERO = 0;
 
+    /**
+     * 真
+     */
+    public static final int RIGHT = 1;
+
+    /**
+     * 假
+     */
+    public static final int NO = 0;
+
     public static final String BASE_URL = "http://www.wanandroid.com/";
+    public static final String UPDATE_VERSION_URL = "https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/source/json_repository/todo_version";
 
     public static final String SAVE_USER_LOGIN_KEY = "user/login";
     public static final String SAVE_USER_REGISTER_KEY = "user/register";
@@ -114,7 +126,29 @@ public class Net {
         api.postRegister(username, password, password).enqueue(callback);
     }
 
+    public void getTodoByType(int type, Callback<Result<TodoTypeBean>> callback) {
+        api.getTodoList(type).enqueue(callback);
+    }
+
+    public void postUpdateTodo(TodoTypeBean.TodoListBean.TodoBean todoBean, Callback<Result> callback) {
+        api.postUpdateTodo(todoBean.getId(),
+                todoBean.getTitle(),
+                todoBean.getContent(),
+                todoBean.getDateStr(),
+                todoBean.getStatus(),
+                todoBean.getType()).enqueue(callback);
+    }
 
 
+    public void postAddTodo(TodoTypeBean.TodoListBean.TodoBean todoBean, Callback<Result> callback) {
+        api.postAddTodo(
+                todoBean.getTitle(),
+                todoBean.getContent(),
+                todoBean.getDateStr(),
+                todoBean.getType()).enqueue(callback);
+    }
 
+    public void postDelTodo(int id, Callback<Result> callback) {
+        api.postDelTodo(id).enqueue(callback);
+    }
 }

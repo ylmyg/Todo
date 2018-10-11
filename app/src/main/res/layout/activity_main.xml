@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".module.main.MainActivity">
+    tools:context=".module.main.MainActivity"
+    android:background="@drawable/confectionary">
 
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/nested_scroll_view"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:clipToPadding="false"
-        android:scrollbars="none"
-        android:scrollingCache="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/todoListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="sdaf\nsdafjsa\nsjadflkjdsa\nsdafdas\n\n\n\n\n\n\n\n\n\nsjdaklfjsalkfjsa\n\sdafjlkasjf\n\n\n\dsafjlksjdflksjdlfkjsldjflsdjfl\n\n\n\\n\n\n\n\nlsadjflksjfkjas\ndslafkj\nsdafsdaf\nsdafjsa\nsjadflkjdsa\nsdafdas\n\n\n\n\n\n\n\n\n\nsjdaklfjsalkfjsa\n\sdafjlkasjf\n\n\n\dsafjlksjdflksjdlfkjsldjflsdjfl\n\n\n\\n\n\n\n\nlsadjflksjfkjas\ndslafkj\nsdafsdaf\nsdafjsa\nsjadflkjdsa\nsdafdas\n\n\n\n\n\n\n\n\n\nsjdaklfjsalkfjsa\n\sdafjlkasjf\n\n\n\dsafjlksjdflksjdlfkjsldjflsdjfl\n\n\n\\n\n\n\n\nlsadjflksjfkjas\ndslafkj\nsdafsdaf\nsdafjsa\nsjadflkjdsa\nsdafdas\n\n\n\n\n\n\n\n\n\nsjdaklfjsalkfjsa\n\sdafjlkasjf\n\n\n\dsafjlksjdflksjdlfkjsldjflsdjfl\n\n\n\\n\n\n\n\nlsadjflksjfkjas\ndslafkj\nsdaf"/>
-    </android.support.v4.widget.NestedScrollView>
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -31,11 +31,17 @@
         android:layout_margin="@dimen/spacing_smlarge"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="onClickHomeFab"
         app:backgroundTint="@android:color/white"
         app:fabSize="normal"
-        android:onClick="onClickHomeFab"
+        app:layout_behavior="com.xujiaji.todo.behavior.FABScrollBehavior"
         app:rippleColor="@color/grey_40"
-        app:srcCompat="@drawable/ic_add"
-        app:layout_behavior="com.xujiaji.todo.behavior.FABScrollBehavior" />
+        app:srcCompat="@drawable/ic_add" />
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 
 </android.support.design.widget.CoordinatorLayout>

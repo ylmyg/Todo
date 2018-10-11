@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.xujiaji.library.RippleCheckBox
+        android:id="@+id/rippleCheckBox"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:rcbCenterCircleColor="@color/purple_500"
+        app:rcbCenterCircleRadius="12dp"
+        app:rcbRightColor="@color/green_400"
+        app:rcbRightDuration="200"
+        app:rcbRightStrokeWidth="2dp"
+        app:rcbRippleColor="@color/colorAccent"
+        app:rcbRippleStrokeWidth="3dp" />
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="70dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#0f0f0f"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/rippleCheckBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rippleCheckBox" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="1.2dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="12dp"
+        android:background="#d7d7d7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/text"
+        app:layout_constraintTop_toBottomOf="@id/text" />
+
+</android.support.constraint.ConstraintLayout>

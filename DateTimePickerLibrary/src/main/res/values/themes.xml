@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Window.NoMinWidth" parent="">
+        <item name="android:windowMinWidthMinor">0dip</item>
+        <item name="android:windowMinWidthMajor">0dip</item>
+        <item name="windowMinWidthMinor">0dip</item>
+        <item name="windowMinWidthMajor">0dip</item>
+    </style>
+</resources>

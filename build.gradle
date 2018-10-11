@@ -34,4 +34,8 @@ ext{
     xmvp             = '1.2.2'
     constraint       = '1.1.3'
     toasty           = '1.3.0'
+    adapterHelper    = '2.9.41'
+    happyBubble      = '1.1.6'
+    rippleCheckbox   = '0.0.2'
+    updateApp        = '3.5.2'
 }

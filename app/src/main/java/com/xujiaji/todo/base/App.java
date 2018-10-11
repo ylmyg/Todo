@@ -30,6 +30,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        Login.isOK = PrefHelper.isExist(Net.SAVE_USER_LOGIN_KEY);
     }
 
 

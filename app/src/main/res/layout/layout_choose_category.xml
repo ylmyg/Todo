@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rgGroup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RadioButton
+        android:id="@+id/rbUseOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/use_one"/>
+
+    <RadioButton
+        android:id="@+id/rbWork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/work"/>
+
+    <RadioButton
+        android:id="@+id/rbLearn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/learn"/>
+
+    <RadioButton
+        android:id="@+id/rbLife"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/life"/>
+
+</RadioGroup>

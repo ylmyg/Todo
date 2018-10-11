@@ -29,7 +29,7 @@ public class InputHelper {
     }
 
     public static boolean isEmpty(@Nullable EditText text) {
-        return text == null || isEmpty(text.getText().toString());
+        return text == null || isEmpty(text.getText().toString().trim());
     }
 
     public static boolean isEmpty(@Nullable TextView text) {

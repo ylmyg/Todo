@@ -65,7 +65,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_add_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/D:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_chat_bubble_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -75,8 +75,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="033ea6" />
-                            <entry key="outputName" value="ic_add" />
+                            <entry key="outputName" value="ic_content" />
                             <entry key="sourceFile" value="C:\Users\jiaji" />
                           </map>
                         </option>

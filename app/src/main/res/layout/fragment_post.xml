@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/overlay_dark_30"
+    android:clickable="true"
+    android:focusable="true">
+
+    <FrameLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="?actionBarSize"
+            android:layout_height="?actionBarSize"
+            android:scaleType="center"
+            app:srcCompat="@drawable/ic_back" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <EditText
+            android:id="@+id/etInput"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_height"
+            android:background="@null"
+            android:hint="例如，吃饭"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/spacing_middle2"
+            android:paddingStart="@dimen/spacing_middle2"
+            android:singleLine="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_height"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btnChooseCalendar"
+                android:layout_width="@dimen/default_height"
+                android:layout_height="@dimen/default_height"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_calendar" />
+
+            <ImageView
+                android:id="@+id/btnTypeList"
+                android:layout_width="@dimen/default_height"
+                android:layout_height="@dimen/default_height"
+                android:layout_toEndOf="@id/btnChooseCalendar"
+                android:layout_toRightOf="@id/btnChooseCalendar"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_todo_type_list" />
+
+            <ImageView
+                android:id="@+id/btnContent"
+                android:layout_width="@dimen/default_height"
+                android:layout_height="@dimen/default_height"
+                android:layout_toEndOf="@id/btnTypeList"
+                android:layout_toRightOf="@id/btnTypeList"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_content" />
+
+
+            <ImageView
+                android:id="@+id/btnOk"
+                android:layout_width="@dimen/default_height"
+                android:layout_height="@dimen/default_height"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_send" />
+
+
+        </RelativeLayout>
+
+
+        <io.doist.datetimepicker.date.DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:calendarTextColor="@color/textColorPrimary" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -9,8 +9,9 @@
     <dimen name="spacing_xsmall">2dp</dimen>
     <dimen name="spacing_small">3dp</dimen>
     <dimen name="spacing_medium">5dp</dimen>
-    <dimen name="spacing_xmedium">7dp</dimen>
+    <dimen name="spacing_xmedium">8dp</dimen>
     <dimen name="spacing_middle">10dp</dimen>
+    <dimen name="spacing_middle2">12dp</dimen>
     <dimen name="spacing_large">15dp</dimen>
     <dimen name="spacing_smlarge">18dp</dimen>
     <dimen name="spacing_mlarge">20dp</dimen>
@@ -23,4 +24,6 @@
 
 
     <dimen name="default_height">48dp</dimen>
+
+    <dimen name="sp_10">10sp</dimen>
 </resources>
