@@ -40,5 +40,9 @@ dependencies {
     implementation "com.github.xujiaji:ripple-checkbox:$rippleCheckbox"
     implementation "com.qianwen:update-app:$updateApp"
     implementation 'com.qianwen:okhttp-utils:3.8.0'
+    // 友盟统计
+    implementation "com.umeng.sdk:common:$umengCommon"
+    implementation "com.umeng.sdk:analytics:$umengAnalytics"
+
     implementation project(':DateTimePickerLibrary')
 }

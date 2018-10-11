@@ -38,4 +38,6 @@ ext{
     happyBubble      = '1.1.6'
     rippleCheckbox   = '0.0.2'
     updateApp        = '3.5.2'
+    umengCommon      = '1.5.3'
+    umengAnalytics   = '7.5.3'
 }

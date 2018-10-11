@@ -3,6 +3,7 @@ package com.xujiaji.todo.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.umeng.analytics.MobclickAgent;
 import com.xujiaji.todo.helper.ToolbarHelper;
 
 import io.xujiaji.xmvp.presenters.XBasePresenter;
@@ -19,5 +20,17 @@ public abstract class BaseActivity<T extends XBasePresenter> extends XBaseActivi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         ToolbarHelper.initTranslucent(this);
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 }

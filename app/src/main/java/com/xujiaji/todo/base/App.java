@@ -4,6 +4,9 @@ import android.app.Application;
 import android.support.annotation.NonNull;
 
 import com.google.gson.Gson;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.commonsdk.UMConfigure;
+import com.xujiaji.todo.BuildConfig;
 import com.xujiaji.todo.helper.PrefHelper;
 import com.xujiaji.todo.listener.GenericEventListener;
 import com.xujiaji.todo.repository.bean.UserBean;
@@ -31,8 +34,15 @@ public class App extends Application {
         super.onCreate();
         instance = this;
         Login.isOK = PrefHelper.isExist(Net.SAVE_USER_LOGIN_KEY);
+        initUM();
     }
 
+    private void initUM() {
+        UMConfigure.init(this, "5bbf2736f1f55691100000c2", null, UMConfigure.DEVICE_TYPE_PHONE, null);
+        UMConfigure.setLogEnabled(BuildConfig.DEBUG);
+        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
+
+    }
 
     /**
      * 登录状态
