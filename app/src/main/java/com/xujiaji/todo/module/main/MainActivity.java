@@ -50,8 +50,7 @@ public class MainActivity extends  BaseActivity<MainPresenter> implements MainCo
     }
 
     @Override
-    public void onBeforeCreateCircle() {
-        super.onBeforeCreateCircle();
+    public void onPresenterCircle(MainPresenter presenter) {
         presenter.checkAppUpdate(this);
     }
 

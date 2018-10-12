@@ -3,6 +3,8 @@ package com.xujiaji.todo.module.login;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -29,10 +31,10 @@ public class LoginDialogActivity extends BaseActivity<LoginPresenter> implements
     private ProgressBar mProgressBar;
 
     @Override
-    public void onBeforeCreateCircle() {
-        super.onBeforeCreateCircle();
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setFinishOnTouchOutside(true);
+        super.onCreate(savedInstanceState);
     }
 
     @Override

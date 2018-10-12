@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Play list</string>
-	<string name="account">account number</string>
+	<string name="app_name">WanTodo</string>
+	<string name="account">account</string>
 	<string name="password">password</string>
 	<string name="register">registered</string>
 	<string name="login">log in</string>
