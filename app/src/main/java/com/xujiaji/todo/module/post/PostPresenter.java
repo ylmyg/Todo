@@ -1,5 +1,7 @@
 package com.xujiaji.todo.module.post;
 
+import com.xujiaji.todo.R;
+import com.xujiaji.todo.base.App;
 import com.xujiaji.todo.base.BasePresenter;
 import com.xujiaji.todo.helper.ToastHelper;
 import com.xujiaji.todo.repository.bean.Result;
@@ -27,7 +29,7 @@ public class PostPresenter extends BasePresenter<PostContract.View,PostModel> im
 
             @Override
             public void success(Result bean) {
-                ToastHelper.success("添加成功");
+                ToastHelper.success(App.getInstance().getString(R.string.success_add));
             }
         });
     }

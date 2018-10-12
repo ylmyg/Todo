@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Play list</string>
+	<string name="account">account number</string>
+	<string name="password">password</string>
+	<string name="register">registered</string>
+	<string name="login">log in</string>
+	<string name="wan_android">Wan Android</string>
+	<string name="ing">processing</string>
+	<string name="finished">completed</string>
+	<string name="use_one">Use only this one</string>
+	<string name="work">jobs</string>
+	<string name="learn">Learn</string>
+	<string name="life">life</string>
+	<string name="please_input_content">Please enter content</string>
+	<string name="add_detail_content">Add details</string>
+	<string name="confirm">determine</string>
+	<string name="please_input_todo">Please enter Todo</string>
+	<string name="detail_content">Details</string>
+	<string name="success_delete">successfully deleted</string>
+	<string name="confirm_delete">confirm deletion</string>
+	<string name="cancel">Cancel</string>
+	<string name="success_login">login successful</string>
+	<string name="please_input_account">Please input Username</string>
+	<string name="please_input_password">Please enter your password</string>
+	<string name="success_add">Added successfully</string>
+	<string name="please_check_network">Please check the network</string>
+	<string name="link_out_time">Connection timed out</string>
+	<string name="example_eat">For example, eating</string>
+	<string name="loading">Loading…</string>
+</resources>

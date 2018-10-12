@@ -1,5 +1,7 @@
 package com.xujiaji.todo.repository.remote;
 
+import com.xujiaji.todo.R;
+import com.xujiaji.todo.base.App;
 import com.xujiaji.todo.base.PresenterLife;
 import com.xujiaji.todo.helper.ToastHelper;
 import com.xujiaji.todo.repository.bean.Result;
@@ -45,9 +47,9 @@ public class CallbackHandler {
                 dataCallback.finished();
                 String errMsg;
                 if (t instanceof UnknownHostException || t instanceof ConnectException) {
-                    errMsg = "请检查网络";
+                    errMsg = App.getInstance().getString(R.string.please_check_network);
                 } else if (t instanceof TimeoutException || t instanceof SocketTimeoutException) {
-                    errMsg = "连接超时";
+                    errMsg = App.getInstance().getString(R.string.link_out_time);
                 } else {
                     errMsg = t.getMessage();
                 }

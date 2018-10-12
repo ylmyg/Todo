@@ -1,5 +1,7 @@
 package com.xujiaji.todo.module.login;
 
+import com.xujiaji.todo.R;
+import com.xujiaji.todo.base.App;
 import com.xujiaji.todo.base.PresenterLife;
 import com.xujiaji.todo.helper.InputHelper;
 import com.xujiaji.todo.helper.ToastHelper;
@@ -34,10 +36,10 @@ public class LoginModel implements LoginContract.Model {
 
     private boolean isPassInput(String account, String password) {
         if (InputHelper.isEmpty(account)) {
-            ToastHelper.error("请输入账号");
+            ToastHelper.error(App.getInstance().getString(R.string.please_input_account));
             return false;
         } else if (InputHelper.isEmpty(password)) {
-            ToastHelper.error("请输入密码");
+            ToastHelper.error(App.getInstance().getString(R.string.please_input_password));
             return false;
         }
         return true;

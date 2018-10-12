@@ -105,7 +105,7 @@ public class LoginDialogActivity extends BaseActivity<LoginPresenter> implements
 
     @Override
     public void loginSuccess() {
-        ToastHelper.success("登录成功");
+        ToastHelper.success(getString(R.string.success_login));
         finish();
     }
 
