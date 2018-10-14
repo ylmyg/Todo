@@ -1,7 +1,11 @@
 # Todo
 一个非常简洁清爽的清单工具，帮您轻松记录个人计划。本App的特色就是简洁，让人一目了然，在交互上让人体会到视觉上的舒适感。固定的4种清单分类在顶部可直接切换列表。API由WanAndroid提供
 
-[去fir下载](https://fir.im/wantodo)
+
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+      alt="Download from Google Play"
+      height="80">](https://play.google.com/store/apps/details?id=com.xujiaji.todo) 
+ OR [fir下载](https://fir.im/wantodo)
 
 ## Screenshots
 <div >
