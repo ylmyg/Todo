@@ -30,7 +30,7 @@ public class TodoAdapter extends BaseMultiItemQuickAdapter<MultiItemEntity, Base
     private MainPresenter mMainPresenter;
 
     public TodoAdapter(MainPresenter mainPresenter) {
-        super(new ArrayList<>());
+        super(new ArrayList<MultiItemEntity>());
         mMainPresenter = mainPresenter;
         addItemType(TYPE_TODO_TYPE, R.layout.item_todo_type_ing_or_finished);
         addItemType(TYPE_TODO_DATE, R.layout.item_todo_time);
@@ -71,8 +71,8 @@ public class TodoAdapter extends BaseMultiItemQuickAdapter<MultiItemEntity, Base
                     textView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_content_small, 0);
                 }
 
-                View l = helper.getView(R.id.line);
-                TextView tv = helper.getView(R.id.text);
+                final View l = helper.getView(R.id.line);
+                final TextView tv = helper.getView(R.id.text);
 
                 if (todoBean.getStatus() == Net.RIGHT) {
                     if (tv.getHeight() == 0) {

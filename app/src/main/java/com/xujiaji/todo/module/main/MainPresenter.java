@@ -59,7 +59,7 @@ public class MainPresenter extends BasePresenter<MainContract.View,MainModel> im
     }
 
     @Override
-    public void checkAppUpdate(Activity activity) {
+    public void checkAppUpdate(final Activity activity) {
         new UpdateAppManager
                 .Builder()
                 //必须设置，当前Activity

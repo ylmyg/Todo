@@ -1,33 +1,61 @@
 apply plugin: 'com.android.application'
 
+static def releaseTime() {
+    return new Date().format("yyyy-MM-dd HH-mm", TimeZone.getTimeZone("GMT+8"))
+}
+
+Properties props = new Properties()
+props.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.xujiaji.todo"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 13
+        versionName "1.0.12"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         vectorDrawables.useSupportLibrary = true
     }
+
+    signingConfigs {
+        release {
+            storeFile file(props['KEYSTORE_PATH'])
+            storePassword props['KEYSTORE_PASSWORD']
+            keyAlias props['KEY_ALIAS']
+            keyPassword props['KEY_PASSWORD']
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             zipAlignEnabled true
             // 移除无用的resource文件
             shrinkResources true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "wantodo_v${defaultConfig.versionName}_${releaseTime()}.apk"
+                }
+            }
+        }
+
+        debug {
+            signingConfig signingConfigs.release
         }
     }
 
-    compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
-    }
+//    compileOptions {
+//        targetCompatibility 1.8
+//        sourceCompatibility 1.8
+//    }
 }
 
+apply plugin: 'replugin-plugin-gradle'
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:$support"
@@ -46,6 +74,7 @@ dependencies {
     // 友盟统计
     implementation "com.umeng.sdk:common:$umengCommon"
     implementation "com.umeng.sdk:analytics:$umengAnalytics"
+    implementation 'com.qihoo360.replugin:replugin-plugin-lib:2.3.0'
 
     implementation project(':DateTimePickerLibrary')
 }

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white">
 
-        <ImageView
+        <android.support.v7.widget.AppCompatImageView
             android:id="@+id/btnBack"
             android:layout_width="?actionBarSize"
             android:layout_height="?actionBarSize"
@@ -50,14 +50,14 @@
             android:focusable="true"
             android:orientation="horizontal">
 
-            <ImageView
+            <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/btnChooseCalendar"
                 android:layout_width="@dimen/default_height"
                 android:layout_height="@dimen/default_height"
                 android:scaleType="center"
                 app:srcCompat="@drawable/ic_calendar" />
 
-            <ImageView
+            <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/btnTypeList"
                 android:layout_width="@dimen/default_height"
                 android:layout_height="@dimen/default_height"
@@ -66,7 +66,7 @@
                 android:scaleType="center"
                 app:srcCompat="@drawable/ic_todo_type_list" />
 
-            <ImageView
+            <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/btnContent"
                 android:layout_width="@dimen/default_height"
                 android:layout_height="@dimen/default_height"
@@ -76,7 +76,7 @@
                 app:srcCompat="@drawable/ic_content" />
 
 
-            <ImageView
+            <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/btnOk"
                 android:layout_width="@dimen/default_height"
                 android:layout_height="@dimen/default_height"

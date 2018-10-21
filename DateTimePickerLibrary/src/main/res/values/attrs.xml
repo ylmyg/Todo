@@ -16,44 +16,44 @@
 
     <attr name="maxTextSize" format="dimension" />
 
-    <declare-styleable name="TextAppearance">
-        <!-- Text color. -->
-        <attr name="android:textColor" />
-        <!-- Size of the text. Recommended dimension type for text is "sp" for scaled-pixels (example: 15sp). -->
-        <attr name="android:textSize" />
-        <!-- Style (bold, italic, bolditalic) for the text. -->
-        <attr name="android:textStyle" />
-        <!-- Typeface (normal, sans, serif, monospace) for the text. -->
-        <attr name="android:typeface" />
-        <!-- Font family (named by string) for the text. -->
-        <attr name="android:fontFamily" />
-        <!-- Color of the text selection highlight. -->
-        <attr name="android:textColorHighlight" />
-        <!-- Color of the hint text. -->
-        <attr name="android:textColorHint" />
-        <!-- Color of the links. -->
-        <attr name="android:textColorLink" />
-        <!-- Present the text in ALL CAPS. This may use a small-caps form when available. -->
-        <attr name="android:textAllCaps" />
-        <!-- Place a blurred shadow of text underneath the text, drawn with the
-             specified color. The text shadow produced does not interact with
-             properties on View that are responsible for real time shadows,
-             {@link android.R.styleable#View_elevation elevation} and
-             {@link android.R.styleable#View_translationZ translationZ}. -->
-        <attr name="android:shadowColor" />
-        <!-- Horizontal offset of the text shadow. -->
-        <attr name="android:shadowDx" />
-        <!-- Vertical offset of the text shadow. -->
-        <attr name="android:shadowDy" />
-        <!-- Blur radius of the text shadow. -->
-        <attr name="android:shadowRadius" />
-        <!-- Elegant text height, especially for less compacted complex script text. -->
-        <attr name="android:elegantTextHeight" />
-        <!-- Text letter-spacing. -->
-        <attr name="android:letterSpacing" />
-        <!-- Font feature settings. -->
-        <attr name="android:fontFeatureSettings" />
-    </declare-styleable>
+    <!--<declare-styleable name="TextAppearance">-->
+        <!--&lt;!&ndash;&lt;!&ndash; Text color. &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:textColor" />&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash; Size of the text. Recommended dimension type for text is "sp" for scaled-pixels (example: 15sp). &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:textSize" />&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash; Style (bold, italic, bolditalic) for the text. &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:textStyle" />&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash; Typeface (normal, sans, serif, monospace) for the text. &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:typeface" />&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash; Font family (named by string) for the text. &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:fontFamily" />&ndash;&gt;-->
+        <!--&lt;!&ndash; Color of the text selection highlight. &ndash;&gt;-->
+        <!--<attr name="android:textColorHighlight" />-->
+        <!--&lt;!&ndash;&lt;!&ndash; Color of the hint text. &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:textColorHint" />&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash; Color of the links. &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:textColorLink" />&ndash;&gt;-->
+        <!--&lt;!&ndash; Present the text in ALL CAPS. This may use a small-caps form when available. &ndash;&gt;-->
+        <!--<attr name="android:textAllCaps" />-->
+        <!--&lt;!&ndash;&lt;!&ndash; Place a blurred shadow of text underneath the text, drawn with the&ndash;&gt;-->
+             <!--&lt;!&ndash;specified color. The text shadow produced does not interact with&ndash;&gt;-->
+             <!--&lt;!&ndash;properties on View that are responsible for real time shadows,&ndash;&gt;-->
+             <!--&lt;!&ndash;{@link android.R.styleable#View_elevation elevation} and&ndash;&gt;-->
+             <!--&lt;!&ndash;{@link android.R.styleable#View_translationZ translationZ}. &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:shadowColor" />&ndash;&gt;-->
+        <!--&lt;!&ndash; Horizontal offset of the text shadow. &ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:shadowDx" />&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash; Vertical offset of the text shadow. &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:shadowDy" />&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash; Blur radius of the text shadow. &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<attr name="android:shadowRadius" />&ndash;&gt;-->
+        <!--&lt;!&ndash; Elegant text height, especially for less compacted complex script text. &ndash;&gt;-->
+        <!--<attr name="android:elegantTextHeight" />-->
+        <!--&lt;!&ndash; Text letter-spacing. &ndash;&gt;-->
+        <!--<attr name="android:letterSpacing" />-->
+        <!--&lt;!&ndash; Font feature settings. &ndash;&gt;-->
+        <!--<attr name="android:fontFeatureSettings" />-->
+    <!--</declare-styleable>-->
 
     <declare-styleable name="TimePicker">
         <!-- The layout of the time picker. -->

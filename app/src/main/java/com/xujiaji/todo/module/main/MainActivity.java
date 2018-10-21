@@ -1,5 +1,6 @@
 package com.xujiaji.todo.module.main;
 
+import android.content.DialogInterface;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
@@ -51,7 +52,9 @@ public class MainActivity extends  BaseActivity<MainPresenter> implements MainCo
 
     @Override
     public void onPresenterCircle(MainPresenter presenter) {
-        presenter.checkAppUpdate(this);
+        try {
+            presenter.checkAppUpdate(this);
+        } catch (Exception ignored) {}
     }
 
     @Override
@@ -89,7 +92,12 @@ public class MainActivity extends  BaseActivity<MainPresenter> implements MainCo
     public void onListenerCircle() {
         super.onListenerCircle();
         mRefresh.setOnRefreshListener(this);
-        mHeadView.setOnClickListener(v -> showChooseTodoCategory());
+        mHeadView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showChooseTodoCategory();
+            }
+        });
         mTodoAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -224,14 +232,17 @@ public class MainActivity extends  BaseActivity<MainPresenter> implements MainCo
     }
 
     @Override
-    public void showDeleteTip(int position, TodoTypeBean.TodoListBean.TodoBean todoBean) {
+    public void showDeleteTip(final int position, final TodoTypeBean.TodoListBean.TodoBean todoBean) {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.confirm_delete)
                 .setMessage(todoBean.getTitle())
                 .setNegativeButton(R.string.cancel, null)
-                .setNeutralButton(R.string.confirm, (dialog, which) -> {
-                    mTodoAdapter.remove(position);
-                    presenter.requestDelTodo(todoBean.getId());
+                .setNeutralButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mTodoAdapter.remove(position);
+                        presenter.requestDelTodo(todoBean.getId());
+                    }
                 })
                 .show();
     }

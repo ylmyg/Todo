@@ -61,11 +61,14 @@ public class LoginDialogActivity extends BaseActivity<LoginPresenter> implements
     @Override
     public void onListenerCircle() {
         super.onListenerCircle();
-        mBtnSwitch.setOnClickListener(v -> {
-            if (isLoginPage()) {
-                switchToRegister();
-            } else {
-                switchToLogin();
+        mBtnSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isLoginPage()) {
+                    switchToRegister();
+                } else {
+                    switchToLogin();
+                }
             }
         });
 

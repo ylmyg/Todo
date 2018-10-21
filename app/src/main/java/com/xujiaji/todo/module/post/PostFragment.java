@@ -26,7 +26,6 @@ import com.xujiaji.todo.util.SoftKeyUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
-import java.util.Objects;
 
 import io.doist.datetimepicker.date.DatePicker;
 
@@ -90,7 +89,7 @@ public class PostFragment extends BaseFragment<PostPresenter> implements PostCon
         mBtnContent.setColorFilter(grey);
 
         mEtInput.requestFocus();
-        SoftKeyUtil.show(Objects.requireNonNull(getActivity()), mEtInput);
+        SoftKeyUtil.show(getActivity(), mEtInput);
 
         mBubbleDialog = null;
         mEditContentBubbleDialog = null;
@@ -103,7 +102,12 @@ public class PostFragment extends BaseFragment<PostPresenter> implements PostCon
         getRootView().findViewById(R.id.rootContainer).setOnClickListener(this);
 
         final View v = getRootView().findViewById(R.id.rootContainer);
-        mEtInput.post(() -> SoftKeyUtil.doMoveLayout( v,  v, new View[]{mDatePicker}, 0));
+        mEtInput.post(new Runnable() {
+            @Override
+            public void run() {
+                SoftKeyUtil.doMoveLayout( v,  v, new View[]{mDatePicker}, 0);
+            }
+        });
 
         mBtnChooseCalendar.setOnClickListener(this);
         mBtnContent.setOnClickListener(this);
@@ -180,14 +184,19 @@ public class PostFragment extends BaseFragment<PostPresenter> implements PostCon
     @Override
     public void hidePage() {
         mEtInput.setText("");
-        SoftKeyUtil.hide(Objects.requireNonNull(getActivity()));
-        Objects.requireNonNull(getActivity()).onBackPressed();
+        SoftKeyUtil.hide(getActivity());
+        getActivity().onBackPressed();
     }
 
     @Override
     public void showChooseCalender() {
-        SoftKeyUtil.hide(Objects.requireNonNull(getActivity()), mEtInput);
-        mDatePicker.postDelayed(() -> mDatePicker.setVisibility(View.VISIBLE), 200);
+        SoftKeyUtil.hide(getActivity(), mEtInput);
+        mDatePicker.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mDatePicker.setVisibility(View.VISIBLE);
+            }
+        }, 200);
     }
 
     @Override
@@ -243,19 +252,22 @@ public class PostFragment extends BaseFragment<PostPresenter> implements PostCon
     public void showEditContent() {
         if (mEditContentBubbleDialog == null) {
             View view = LayoutInflater.from(getActivity()).inflate(R.layout.layout_add_content, null);
-            mEditContentBubbleDialog = new BubbleDialog(Objects.requireNonNull(getActivity()))
+            mEditContentBubbleDialog = new BubbleDialog(getActivity())
                     .addContentView(view)
                     .setPosition(BubbleDialog.Position.TOP);
 
-            EditText editText = view.findViewById(R.id.etEditContent);
-            view.findViewById(R.id.btnOk).setOnClickListener(v -> {
-                mContent = InputHelper.toString(editText);
-                if (TextUtils.isEmpty(mContent)) {
-                    mBtnContent.setColorFilter(grey);
-                } else {
-                    mBtnContent.setColorFilter(green);
+            final EditText editText = view.findViewById(R.id.etEditContent);
+            view.findViewById(R.id.btnOk).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mContent = InputHelper.toString(editText);
+                    if (TextUtils.isEmpty(mContent)) {
+                        mBtnContent.setColorFilter(grey);
+                    } else {
+                        mBtnContent.setColorFilter(green);
+                    }
+                    hideEditContent();
                 }
-                hideEditContent();
             });
         }
 
