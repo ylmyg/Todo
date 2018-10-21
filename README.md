@@ -5,7 +5,12 @@
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
       alt="Download from Google Play"
       height="80">](https://play.google.com/store/apps/details?id=com.xujiaji.todo) 
- OR [fir下载](https://fir.im/wantodo)
+[<img src="https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/github_download.png"
+      alt="github下载"
+      height="80">](https://github.com/xujiaji/Todo/releases) 
+[<img src="https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/fir_download.png"
+      alt="fir下载"
+      height="80">](https://fir.im/wantodo) 
 
 ## Screenshots
 <div >
